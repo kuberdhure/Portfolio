@@ -51,6 +51,7 @@ export default function RootLayout({
       className={`dark ${sans.variable} ${serif.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
+      <meta name="google-site-verification" content="8AUsj58Sgq0wzzNnstOFsTHue2qlMx6cNNLj4w7GTVE" />
       <body className="font-sans">
         <Nav />
         {children}
