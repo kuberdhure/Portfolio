@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Section } from "@/components/section";
-import { projects, type Project } from "@/data/content";
+import { featuredProjects, type Project } from "@/data/content";
 
 const rowClass =
   "group grid grid-cols-12 items-baseline gap-4 py-8 transition-colors hover:bg-muted/40 sm:gap-8 sm:py-10";
@@ -71,9 +71,22 @@ function Row({ p }: { p: Project }) {
 
 export function Work() {
   return (
-    <Section id="work" label="Selected Work">
+    <Section id="work">
+      <div className="mb-12 flex items-center justify-between gap-6">
+        <div className="flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+          <span className="h-px w-6 bg-border" aria-hidden />
+          Selected Work
+        </div>
+        <Link
+          href="/work"
+          className="inline-flex items-center gap-2 border-b border-neon pb-1 font-mono text-[11px] uppercase tracking-widest text-neon transition-colors hover:text-foreground"
+        >
+          View all work
+          <ArrowUpRight className="size-3.5" />
+        </Link>
+      </div>
       <ul className="divide-y divide-border border-y border-border">
-        {projects.map((p) => (
+        {featuredProjects.map((p) => (
           <li key={p.id}>
             <Row p={p} />
           </li>

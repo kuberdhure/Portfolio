@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/content";
+import { RentACarCaseStudy } from "@/components/rent-a-car-case-study";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,10 @@ export default async function ProjectPage({ params }: PageProps) {
           All work
         </Link>
 
+        {slug === "rent-a-car" ? (
+          <RentACarCaseStudy />
+        ) : (
+          <>
         {/* Cover */}
         <ImagePlaceholder
           aspect="aspect-[16/10]"
@@ -203,6 +208,8 @@ export default async function ProjectPage({ params }: PageProps) {
             </Link>
           )}
         </nav>
+          </>
+        )}
       </article>
     </main>
   );

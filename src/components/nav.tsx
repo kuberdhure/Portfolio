@@ -13,13 +13,13 @@ export function Nav() {
         </Link>
         <nav className="flex items-center gap-6 text-sm text-muted-foreground">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="transition-colors hover:text-foreground"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

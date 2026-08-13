@@ -1,28 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/content";
 import "./globals.css";
-
-const sans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const serif = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-  axes: ["SOFT", "opsz"],
-});
-
-const mono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   colorScheme: "dark",
@@ -46,11 +26,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`dark ${sans.variable} ${serif.variable} ${mono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className="dark" suppressHydrationWarning>
       <meta name="google-site-verification" content="8AUsj58Sgq0wzzNnstOFsTHue2qlMx6cNNLj4w7GTVE" />
       <body className="font-sans">
         <Nav />
