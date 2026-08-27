@@ -3,6 +3,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { site } from "@/data/content";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const viewport: Viewport = {
   colorScheme: "dark",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <Analytics/>
       </body>
     </html>
   );
