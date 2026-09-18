@@ -1,6 +1,9 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { hero, site } from "@/data/content";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
@@ -21,6 +24,13 @@ export function Hero() {
           <p className="mt-8 max-w-xl text-pretty text-lg text-muted-foreground sm:text-xl">
             {hero.sub}
           </p>
+          <a
+            href={`mailto:${site.email}`}
+            className={cn(buttonVariants({ size: "lg" }), "mt-8 gap-2")}
+          >
+            Drop me a mail
+            <ArrowUpRight className="size-4" />
+          </a>
           <p className="mt-10 text-pretty font-mono text-xs uppercase tracking-widest text-muted-foreground">
             {site.location} · {site.availability}
           </p>
