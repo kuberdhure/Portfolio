@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { LightboxImage } from "@/components/lightbox-image";
 
 type Slide = { src: string; alt: string; label: string; heading: string; description: string };
 
@@ -48,8 +49,7 @@ function ProductCarousel({ slides }: { slides: Slide[] }) {
       >
         <div className="flex items-start transition-transform duration-500 ease-out" style={{ transform: `translateX(-${active * 100}%)` }}>
           {slides.map((slide) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={slide.src} src={slide.src} alt={slide.alt} className="block h-auto w-full shrink-0" draggable={false} />
+            <LightboxImage key={slide.src} src={slide.src} alt={slide.alt} className="w-full shrink-0 rounded-none" />
           ))}
         </div>
         {slides.length > 1 && <>
@@ -81,8 +81,7 @@ export function RentACarCaseStudy() {
     </header>
 
     <div className="mt-12 overflow-hidden rounded-2xl border border-border md:mt-16">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`${imageRoot}/hero.jpeg`} alt="Car rental platform hero" className="block h-auto w-full" />
+      <LightboxImage src={`${imageRoot}/hero.jpeg`} alt="Car rental platform hero" className="rounded-none" />
     </div>
 
     <EditorialSection label="Concept" heading="The concept"><p>The goal was to explore how a modern car rental experience could bring vehicle discovery, availability, booking, and fleet management into one streamlined platform.</p></EditorialSection>

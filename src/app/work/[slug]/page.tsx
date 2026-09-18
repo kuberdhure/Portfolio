@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/content";
 import { RentACarCaseStudy } from "@/components/rent-a-car-case-study";
+import { LightboxImage } from "@/components/lightbox-image";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -272,11 +273,10 @@ function ImagePlaceholder({
 }) {
   if (src) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
+      <LightboxImage
         src={src}
         alt={label}
-        className={`block h-auto w-full rounded-2xl border border-border ${className}`}
+        className={`rounded-2xl border border-border ${className}`}
       />
     );
   }
