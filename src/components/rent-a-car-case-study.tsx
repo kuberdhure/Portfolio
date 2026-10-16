@@ -67,6 +67,38 @@ function ProductCarousel({ slides }: { slides: Slide[] }) {
 export function RentACarCaseStudy() {
   const imageRoot = "/images/rent-a-car/images";
   const liveDemoUrl = "https://car-rental-demo-orpin.vercel.app/";
+  const features = [
+    {
+      title: "Fleet Management",
+      description:
+        "A focused operations view for organizing vehicles and reviewing the fleet at a glance.",
+    },
+    {
+      title: "Vehicle Details",
+      description:
+        "A clear vehicle profile brings photos, key specifications, and rental information together before a customer decides.",
+    },
+    {
+      title: "Vehicle Availability",
+      description:
+        "Availability is easy to scan, helping customers find options that fit their planned rental dates.",
+    },
+    {
+      title: "Online Booking",
+      description:
+        "A guided reservation flow moves from choosing a vehicle to reviewing the key details of a rental.",
+    },
+    {
+      title: "Booking Management",
+      description:
+        "A central booking view makes it easier to review reservations, dates, and rental status.",
+    },
+    {
+      title: "Admin Dashboard",
+      description:
+        "An at-a-glance overview brings fleet and booking activity into one place for day-to-day operations.",
+    },
+  ];
   return <>
     <header className="border-b border-border pb-16 md:pb-20">
       <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">02 · 2026 · Concept Project</p>
@@ -92,7 +124,24 @@ export function RentACarCaseStudy() {
       { src: `${imageRoot}/dashboard_1.png`, alt: "Rental operations dashboard", label: "Management", heading: "Manage rentals from one place", description: "A centralized dashboard for managing vehicles, monitoring bookings, and keeping track of rental operations." },
       { src: `${imageRoot}/dashboard_2.png`, alt: "Rental management dashboard", label: "Management", heading: "Manage rentals from one place", description: "A centralized dashboard for managing vehicles, monitoring bookings, and keeping track of rental operations." },
     ]} />
-    <section className="mt-24 md:mt-32"><SectionLabel label="Features" /><h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl">Key Features</h2><div className="mt-10 grid border-l border-t border-border sm:grid-cols-2 lg:grid-cols-3">{["Fleet Management", "Vehicle Details", "Vehicle Availability", "Online Booking", "Booking Management", "Admin Dashboard"].map((feature) => <div key={feature} className="border-b border-r border-border px-5 py-6 font-display text-xl italic text-foreground">{feature}</div>)}</div></section>
+    <section className="mt-24 md:mt-32">
+      <SectionLabel label="Features" />
+      <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl">
+        Key Features
+      </h2>
+      <div className="mt-10 divide-y divide-border border-y border-border">
+        {features.map((feature) => (
+          <article key={feature.title} className="grid gap-3 py-6 sm:grid-cols-12 sm:gap-8">
+            <h3 className="font-display text-xl italic text-foreground sm:col-span-4">
+              {feature.title}
+            </h3>
+            <p className="text-pretty text-muted-foreground sm:col-span-8">
+              {feature.description}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
     <section className="mt-24 md:mt-32"><SectionLabel label="Built with" /><div className="mt-8 flex flex-wrap gap-2">{["Next.js", "React", "Tailwind CSS"].map((tech) => <span key={tech} className="inline-flex items-center rounded-full border border-neon/50 bg-neon/5 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-neon shadow-[0_0_14px_-4px_hsl(var(--neon)/0.45)]">{tech}</span>)}</div></section>
     <section className="mt-24 border-t border-border pt-12 md:mt-32 md:pt-16">
       <SectionLabel label="Live demo" />

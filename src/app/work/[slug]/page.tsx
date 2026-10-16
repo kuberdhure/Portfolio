@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/content";
 import { RentACarCaseStudy } from "@/components/rent-a-car-case-study";
+import { RealEstateCaseStudy } from "@/components/real-estate-case-study";
 import { LightboxImage } from "@/components/lightbox-image";
 
 type PageProps = {
@@ -51,6 +52,8 @@ export default async function ProjectPage({ params }: PageProps) {
 
         {slug === "rent-a-car" ? (
           <RentACarCaseStudy />
+        ) : slug === "real-estate" ? (
+          <RealEstateCaseStudy />
         ) : (
           <>
         {/* Cover */}

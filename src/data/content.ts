@@ -54,6 +54,7 @@ export type Project = {
   tagline?: string;
   client?: string;
   slug?: string;
+  linkDisabled?: boolean;
   caseStudy?: CaseStudy;
 };
 
@@ -131,8 +132,9 @@ const urbanscapeGAN: Project = {
 };
 
 const studentContentPortal: Project = {
-  id: "04",
+  id: "05",
   slug: "student-content-portal",
+  linkDisabled: true,
   title: "Student Content Portal",
   summary:
     "Full-stack platform giving students access to courses, notes, and past papers, with auth, database, and content delivery powered by Appwrite.",
@@ -199,16 +201,42 @@ const carRental: Project = {
   },
 };
 
+const realEstate: Project = {
+  id: "04",
+  slug: "real-estate",
+  title: "North & Pine — Real Estate ",
+  summary:
+    "A single-page real estate website concept for North & Pine, presented as a visual demo.",
+  year: "2026",
+  role: "Design & Development",
+  stack: ["Next.js", "GSAP"],
+  caseStudy: {
+    cover: "/images/real-estate/hero.jpeg",
+    lead:
+      "A real estate website concept for North & Pine. Case-study details coming soon.",
+    overview: "Project overview coming soon.",
+    problem: "Project context coming soon.",
+    approach: "Design and development details coming soon.",
+    outcome: "Project outcome coming soon.",
+    features: {
+      src: "/images/real-estate/showcase.webp",
+      caption: "North & Pine website showcase",
+    },
+  },
+};
+
 export const projects: Project[] = [
   trackOps,
   carRental,
   urbanscapeGAN,
+  realEstate,
   studentContentPortal,
 ];
 
 export const featuredProjects: Project[] = [
   trackOps,
   carRental,
+  realEstate,
   studentContentPortal,
 ];
 

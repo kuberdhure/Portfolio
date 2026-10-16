@@ -50,10 +50,16 @@ function Row({ p }: { p: Project }) {
       </span>
       <span className="col-span-4 flex items-center justify-end gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground sm:col-span-1">
         <span>{p.year}</span>
-        <ArrowUpRight className="size-4 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        {!p.linkDisabled && (
+          <ArrowUpRight className="size-4 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+        )}
       </span>
     </>
   );
+
+  if (p.linkDisabled) {
+    return <div className={rowClass}>{inner}</div>;
+  }
 
   if (p.slug) {
     return (
