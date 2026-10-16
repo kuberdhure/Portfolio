@@ -10,6 +10,7 @@ export function Section({ id, label, className, children, ...props }: SectionPro
   return (
     <section
       id={id}
+      data-gsap-reveal={id === "work" ? undefined : ""}
       className={cn(
         "border-t border-border px-6 py-24 sm:px-10 md:py-32",
         className

@@ -37,7 +37,7 @@ function ProjectCard({ p }: { p: Project }) {
   }, [isOpen]);
 
   return (
-    <article className="group relative min-w-0">
+    <article data-gsap-work-card className="group relative min-w-0">
       <div className="relative aspect-[16/10] overflow-hidden rounded-sm border border-border bg-muted">
         {cover ? (
           <Image
@@ -166,7 +166,7 @@ export function Work() {
           <ArrowUpRight className="size-3.5" />
         </Link>
       </div>
-      <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      <div data-gsap-work-list className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {featuredProjects.map((p) => (
           <ProjectCard key={p.id} p={p} />
         ))}
