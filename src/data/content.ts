@@ -237,7 +237,6 @@ export const featuredProjects: Project[] = [
   trackOps,
   carRental,
   realEstate,
-  studentContentPortal,
 ];
 
 export type Tech = { name: string; logo: string };
