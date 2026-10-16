@@ -45,7 +45,7 @@ function ProjectCard({ p }: { p: Project }) {
             alt=""
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.02] group-focus-within:scale-[1.02]"
+            className="object-fill transition-transform duration-500 group-hover:scale-[1.02]"
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -84,7 +84,7 @@ function ProjectCard({ p }: { p: Project }) {
         onClick={(event) => {
           if (event.target === dialogRef.current) dialogRef.current?.close();
         }}
-        className="m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-4xl overscroll-contain overflow-y-auto rounded-sm border border-border bg-background p-0 text-foreground shadow-2xl backdrop:bg-foreground/40 backdrop:backdrop-blur-sm open:animate-in open:fade-in open:zoom-in-95 open:duration-200"
+        className="m-auto max-h-[90dvh] w-[calc(100%-2rem)] max-w-4xl overscroll-contain overflow-y-auto rounded-sm border border-border bg-background p-0 text-foreground shadow-2xl backdrop:bg-foreground/25 backdrop:backdrop-blur-sm open:animate-in open:fade-in open:zoom-in-95 open:duration-500 open:ease-out"
       >
         <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-muted">
           {cover ? (

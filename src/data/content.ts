@@ -244,6 +244,7 @@ export type Tech = { name: string; logo: string };
 export const techStack: Tech[] = [
   { name: "React Native", logo: "/images/tech/react.svg" },
   { name: "React", logo: "/images/tech/react.svg" },
+  { name: "Next.js", logo: "/images/tech/nextjs.svg" },
   { name: "JavaScript", logo: "/images/tech/javascript.svg" },
   { name: "HTML5", logo: "/images/tech/html5.svg" },
   { name: "CSS3", logo: "/images/tech/css.svg" },
